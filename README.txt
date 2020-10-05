@@ -1,4 +1,4 @@
-- Link tài khoảng Github : https://github.com/KhaiiDangg/CSE485_175A071216_DangKhai.
+- Link tài khoảng Github : https://github.com/KhaiiDangg/CSE485_175A071216_DangKhai.git
 
 - Github bao gồm 3 thư mục : Bài tập thực hành , Bài tập về nhà , Project.
 
