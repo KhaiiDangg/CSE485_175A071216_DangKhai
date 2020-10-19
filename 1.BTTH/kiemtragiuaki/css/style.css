@@ -1,0 +1,33 @@
+h1 {
+    text-align: center;
+}
+.add {
+    border-radius: 3px;
+    float: left;
+    background-color: rgb(65, 65, 65);
+    
+}
+.add a {
+    color: white;
+}
+.add a:link {
+    text-decoration: none;
+}
+.add a:hover {
+    color: white;
+}
+input {
+    margin: 0 0 1rem 0;
+    border-radius: 2px;
+    width: 30rem;
+    height: 2rem;
+    
+}
+.save , .reset {
+    width: 4rem;
+    height: 2rem;
+    font-weight: bold;
+}
+label {
+    font-weight: bold;
+}
