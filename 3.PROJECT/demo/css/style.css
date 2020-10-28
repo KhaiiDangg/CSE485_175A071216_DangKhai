@@ -123,3 +123,22 @@
    z-index: 999;
    min-width: 250px;
   }
+  
+/*Footer */
+.footer {
+    
+}
+.footer-mid {
+    background-color: red;
+}
+.footer-right {
+    background-color: pink;
+}
+.footer-mid ,.footer-right,.footer-left {
+    width: max-width;
+    height: 150px ;
+}
+.bottom-content {
+    width: max-width;
+    height: 80px;
+}
