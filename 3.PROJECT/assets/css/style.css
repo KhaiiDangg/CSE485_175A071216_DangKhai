@@ -8,13 +8,12 @@ body {
     padding: 0px;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
-
-
-
+p {
+    text-align: center;
+}
 /*Header */
 .header{
     background-color: #003478;
-    width: 
 }
 /* .container {
     background-color: rgb(0, 60, 112);
@@ -27,6 +26,10 @@ body {
 }
 .flex span {
     font-size: 14px;
+    
+}
+.titlelogo {
+    margin-top: 8px;
 }
 .language {
    width: 180px;
@@ -138,51 +141,6 @@ body {
    min-width: 250px;
   }
 
-/*Middle-Content  */
-.middle {
-    width: 80rem;
-    height: 600px;
-    margin: 10px 0px 10px 250px;
-}
-.middle h5{
-    text-align: center;
-}
-.table1 , .table2{
-    border-radius: 13px;
-    border: 2px solid #73AD21;
-    font-weight: bold;
-}
-.table1 .title1 {
-    margin-bottom: 20px;
-    
-}
-.table2 .title2 {
-    margin-bottom: 20px;
-    
-}
-.gioitinhtd , .ngaycaptd , .emailtd , .tinhtd , .ngaysinhtd , .noicaptd , .huyentd{
-    padding-left: 80px;
-}
-.namnutd {
-    padding-top: 10px;
-}
-input {
-    padding: 2px 0 0 0;
-    
-}
-.table2 {
-    margin-top: 10px;
-}
-.bacdaotao , .kvut {
-    width: 185px;
-}
-.tinhlp10td {
-    width: 100px;
-}
-.btndky {
-    margin-top: 20px ;
-    font-weight: bold;
-}
 /*Footer */
 .footer {
     background-color: #003478;
@@ -193,7 +151,6 @@ input {
     margin-top: 100px;
     height: max-content ;
     position: relative;
-    width: 
 }
 .footer-mid {
     margin: 10px 50px 10px 50px;
@@ -203,9 +160,7 @@ input {
 .footer-mid a{
     font-size: 12px;
     margin-top: -10px;
-}
-.footer-right {
-    
+    width: 15rem;
 }
 .bottom-content {
     text-align: center;
