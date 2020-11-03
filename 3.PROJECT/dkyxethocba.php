@@ -9,12 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <!--Css-->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/style1.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    
+      <!-- Header -->
+    <?php include('app/include/header.php') ; ?>
 
     <!-- Middle Content-->
     <div class="middle">
@@ -175,9 +175,9 @@
                             <td align="right">Điểm xét tuyển</td>
                             <td><input type="text" class="diemxettuyen"></td>
                         </tr>
-                        <tr>
+                        <tr >
                             <td>Ghi chú</td>
-                            <td><input type="text" class="ghichu"></td>
+                            <td colspan="6"><input type="text" class="ghichu" id="ghichu" style="width: 100%;"></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
@@ -192,7 +192,11 @@
             </div> 
         </div>
     </div>
-  
+
+    <!--Footer -->
+    <?php include('app/include/footer.php') ; ?>
+
+    
   
 
     <!-- Optional JavaScript -->

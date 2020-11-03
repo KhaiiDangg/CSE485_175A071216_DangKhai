@@ -1,13 +1,9 @@
-<!--Footer-->
-<div class="footer">
-    <div class="end-content">
-        <div class="info flex">
-            <div class="col-lg-2 footer-left">
-                
-            </div>
-                
-            <div class="col-lg-8 flex footer-mid">
-                <div class="col-md-2">
+    <!--Footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="container"> 
+                <div class="row">
+                <div class="col-md-3 footer-mid ">
                     <ul class="nav-link">
                         <a class="nav-link" href="#"><li>Giới thiệu</li></a>
                         <a class="nav-link" href="#"><li>Logo của Khoa CNTT</li></a>
@@ -17,7 +13,7 @@
                         
                 </ul>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-3 footer-mid">
                     <ul class="nav-link">
                         <a class="nav-link" href="#"><li>Đào tạo</li></a>
                         <a class="nav-link" href="#"><li>Mô hình đào tạo</li></a>
@@ -27,7 +23,7 @@
                         
                 </ul>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-3 footer-mid">
                     <ul class="nav-link">
                         <a class="nav-link" href="#"><li>Nghiên cứu khoa học</li></a>
                         <a class="nav-link" href="#"><li>Thông tin seminar</li></a>
@@ -37,7 +33,7 @@
                         
                 </ul>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3 footer-mid">
                     <ul class="nav-link">
                             <a class="nav-link" href="#"><li>Công nghệ phần mềm</li></a>
                             <a class="nav-link" href="#"><li>Hệ thống thông tin</li></a>
@@ -47,16 +43,13 @@
                             <a class="nav-link" href="#"><li>Trung tâm tin học</li></a>
                     </ul>
                 </div>
-            </div>
-                
-            <div class="col-lg-2 footer-right">
-                
+            </div></div>
+            
+        </div>
+            <div class="bottom-content" ">
+                <p>© 2017 Khoa Công nghệ thông tin - Đại học Thủy lợi<br>
+                    Địa chỉ: nhà C1, Đại học Thủy lợi, 175 Tây Sơn, Đống Đa, Hà Nội. Điện thoại: (+84)-024&nbsp;3 5632211. Email: <a class="ui-link-white" href="#">vpkcntt@tlu.edu.vn</a></p>
             </div>
         </div>
-        <div class="bottom-content" ">
-            <p>© 2017 Khoa Công nghệ thông tin - Đại học Thủy lợi<br>
-                Địa chỉ: nhà C1, Đại học Thủy lợi, 175 Tây Sơn, Đống Đa, Hà Nội. Điện thoại: (+84)-024&nbsp;3 5632211. Email: <a class="ui-link-white" href="#">vpkcntt@tlu.edu.vn</a></p>
-        </div>
+    
     </div>
-
-</div>

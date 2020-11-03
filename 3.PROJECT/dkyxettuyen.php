@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Css-->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/style2.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
+  <?php include('app/include/header.php') ; ?>
        <!-- Middle Content-->
     <div class="middle">
         <div class="content">
@@ -163,7 +163,7 @@
                     </tr>
                     <tr>
                         <td> Ghi chú </td>
-                        <td> <input name="ghichu" type="text" class="ghichu"></td>
+                        <td colspan="6"> <input name="ghichu" type="text" class="ghichu" style="width: 100%;"></td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
@@ -176,6 +176,7 @@
             <p> <input type="submit" class="btndky" value="ĐĂNG KÝ"> </p>
            </div>
     </div>
+    <?php include('app/include/footer.php') ; ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
