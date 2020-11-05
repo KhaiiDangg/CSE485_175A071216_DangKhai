@@ -50,6 +50,7 @@ p {
 }
 .search-bar {
     height: 28px;
+    margin-top: 7px;
 }
 
 .logo {
@@ -57,16 +58,17 @@ p {
 }
 .logo img {
     max-width: 100%;
-    margin-left: 100px;
+    margin-left: 150px;
     margin-right: 100px;
      
 }
 .menu-header {
     display: flex;
-    border-bottom: 1px solid #91AFCA ;
-
+    margin-left: 150px;
 }
-
+.border-menu {
+    border-bottom: 1px solid #91AFCA ;
+}
 /* Dropdown Button */
 .dropbtn {
     background-color: white;

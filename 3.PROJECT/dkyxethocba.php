@@ -68,7 +68,7 @@
                                         <option value="">--Chọn--</option>
                                     </select>
                                 </td>
-                                <td class="huyentd">Huyện</td>
+                                <td class="huyentd">Quận(Huyện)</td>
                                 <td>
                                     <select name="huyen" class="tinh" style="width:100%">
                                         <option value="">--Chọn--</option>
