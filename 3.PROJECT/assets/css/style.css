@@ -197,7 +197,7 @@ select {
     width: 100px;
 }
 
-.diem10 ,.diem11 ,.diem12 ,.diemxettuyen , .namtotnghiep{
+.diem10 ,.diem11 ,.diem12 ,.diemxettuyen , .namtotnghiep, .tongdiem{
     text-align: center;
 }
 .nganhtd {
@@ -216,6 +216,7 @@ select {
 .doituonguttdsel {
     padding-right: 12px;
 }
+
 .ghichu {
     width: 600px ;
 }

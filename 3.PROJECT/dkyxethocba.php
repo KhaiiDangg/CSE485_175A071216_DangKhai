@@ -31,16 +31,15 @@
         $diemxettuyen = $_POST['diemxettuyen'] ;
         $ghichu = $_POST['ghichu'] ;
 
-        $sql = "INSERT INTO `hosocanhan`(`cmnd`, `hoten`, `gioitinh`, `ngaysinh`, `ngaycapcmnd`, `noicapcmnd`, `sdt`, `email`, `hokhau`, `tinh`, `huyen`, `diachinhanthu`) VALUES ($cmnd,'$hoten','$gioitinh','$ngaysinh','$ngaycap','$noicap','$sdt','$email','$hokhau','$tinh','$huyen','$diachinhanthu') " ;
+        $sql = "INSERT INTO hosocanhan(cmnd, hoten, gioitinh, ngaysinh, ngaycapcmnd, noicapcmnd, sdt, email, hokhau, tinh, huyen, diachinhanthu) VALUES ($cmnd,'$hoten','$gioitinh','$ngaysinh','$ngaycap','$noicap','$sdt','$email','$hokhau','$tinh','$huyen','$diachinhanthu') " ;
         $query = mysqli_query($conn, $sql);
-        if ($conn->query($sql) === true) {
+        if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
           } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
           }
 
-        $sql = "INSERT INTO `xethocba`(`cmnd`, `bacdaotao`, `loaihinh`, `nganh`, `khuvucuutien`, `doituonguutien`, `tinhlop10`, `tinhlop11`, `tinhlop12`, `truonglop10`, `truonglop11`, `truonglop12`, `diemtblop10`, `diemtblop11`, `diemtblop12`, `diemxettuyen`, `namtotnghiep`, `ghichu`) VALUES ($cmnd,'$bacdaotao','$loaihinh','$nganh','$khuvucuutien','$doituonguutien','$tinhlop10','$tinhlop11','$tinhlop12','$truonglop10','$truonglop11','$truonglop12', $diem10 , $diem11 , $diem12 , $diemxettuyen , $namtotnghiep ,'$ghichu')" ;
-        // $query = mysqli_query($conn, $sql);  
+        $sql = "INSERT INTO xethocba(cmnd, bacdaotao, loaihinh, nganh, khuvucuutien, doituonguutien, tinhlop10, tinhlop11, tinhlop12, truonglop10, truonglop11, truonglop12, diemtblop10, diemtblop11, diemtblop12, diemxettuyen, namtotnghiep, ghichu) VALUES ($cmnd,'$bacdaotao','$loaihinh','$nganh','$khuvucuutien','$doituonguutien','$tinhlop10','$tinhlop11','$tinhlop12','$truonglop10','$truonglop11','$truonglop12', $diem10 , $diem11 , $diem12 , $diemxettuyen , $namtotnghiep ,'$ghichu')" ; 
          if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
           } else {
@@ -86,10 +85,10 @@
                                 <td> <input type="text" name="hoten" class="hoten"></td>
                                 <td class="gioitinhtd">Giới tính </td>
                                 <td class="namnutd">
-                                    <input type="radio" name="gioitinh" class="gioitinh" value="nam">
+                                    <input type="radio" name="gioitinh" class="gioitinh" value="Nam">
                                     <label for="">Nam</label>
     
-                                    <input type="radio" name="gioitinh" class="gioitinh" value="nu">
+                                    <input type="radio" name="gioitinh" class="gioitinh" value="Nữ">
                                     <label for="">Nữ</label>
                                 </td>
                                 <td class="ngaysinhtd">Ngày sinh</td>
@@ -126,7 +125,7 @@
                                             if ($result->num_rows > 0) {
                                             // output data of each row
                                             while($row = $result->fetch_assoc()) {
-                                            echo "<option value='".$row['tinhhuyen']."'   data-data='".$row['idtinh']."' >".$row['tentinh']."</option>";
+                                            echo "<option value='".$row['tinhhuyen']."'data-data='".$row['idtinh']."' >".$row['tentinh']."</option>";
                                              }
                                             }
                                         ?>
@@ -178,7 +177,7 @@
                                             if ($result->num_rows > 0) {
                                             // output data of each row
                                             while($row = $result->fetch_assoc()) {
-                                            echo "<option value='".$row['loaihinh']."'   data-data='".$row['idloaihinh']."' >".$row['loaihinh']."</option>";
+                                            echo "<option value='".$row['loaihinh']."'data-data='".$row['idloaihinh']."' >".$row['loaihinh']."</option>";
                                              }
                                             }
                                         ?>
@@ -195,17 +194,22 @@
                             <td>Khu vực ƯT</td>
                             <td><select name="khuvucuutien" class="khuvucuutien">
                                 <option value="">--Chọn--</option>
-                                <option value="Khu vực 1">Khu vực 1</option>
-                                <option value="Khu vực 2">Khu vực 2</option>
-                                <option value="Khu vực 3">Khu vực 3</option>
+                                <option value="Khu vực 01">Khu vực 01</option>
+                                <option value="Khu vực 02">Khu vực 02</option>
+                                <option value="Khu vực 03">Khu vực 03</option>
                                </select>
                          </td>
                          <td align="right">Đối tượng ƯT</td>
                          <td><select name="doituonguutien" style="width:100%">
-                            <option value="">--Chọn--</option>
-                            <option value="Đối tượng 1">Đối tượng 1</option>
-                            <option value="Đối tượng 2">Đối tượng 2</option>
-                            <option value="Đối tượng 3">Đối tượng 3</option>
+                         <option value="">--Chọn--</option>
+                                <option value="Dối tượng 01">Đối tượng 01</option>
+                                <option value="Dối tượng 02">Đối tượng 02</option>
+                                <option value="Dối tượng 03">Đối tượng 03</option>
+                                <option value="Dối tượng 04">Đối tượng 04</option>
+                                <option value="Dối tượng 05">Đối tượng 05</option>
+                                <option value="Dối tượng 06">Đối tượng 06</option>
+                                <option value="Dối tượng 07">Đối tượng 07</option>
+                                <option value="Không">Không</option>
                         </select>
                         </td>
                         </tr>
@@ -213,7 +217,7 @@
                         <tr>
                             <td><span>Tên tỉnh</span></td>
                                             <td class="tinhlp10td" align="right">Tỉnh lớp 10</td>
-                                            <td class="tinhlp10sel"><select name="tinhlop10" class="tinhlp10" id="tinhlop10" style="width:100%;">
+                                            <td class="tinhlp10sel"><select name="tinhlop10" id="tinhlop10" style="width:100%;">
                                                 <option value="">--Chọn--</option>
                                                 <?php
                                                             $sql = "SELECT * FROM tinhlop";
@@ -221,13 +225,13 @@
                                                             if ($result->num_rows > 0) {
                                                             // output data of each row
                                                             while($row = $result->fetch_assoc()) {
-                                                            echo "<option value='".$row['tinhlop']."'   data-data='".$row['idtinhlop']."' >".$row['tinh']."</option>";
+                                                            echo "<option value='".$row['tinhlop']."'data-data='".$row['idtinhlop']."' >".$row['tinh']."</option>";
                                                             }
-                                                            }
+                                                        }
                                                 ?>
                                             </select></td>
                             <td class="tinhlp11td" align="right">Tỉnh lớp 11</td>
-                            <td><select name="tinhlop11" class="tinhlp11" id="tinhlop11">
+                            <td><select name="tinhlop11" id="tinhlop11">
                                 <option value="">--Chọn--</option>
                                 <?php
                                             $sql = "SELECT * FROM tinhlop";
@@ -235,13 +239,13 @@
                                             if ($result->num_rows > 0) {
                                             // output data of each row
                                             while($row = $result->fetch_assoc()) {
-                                            echo "<option value='".$row['tinhlop']."'   data-data='".$row['idtinhlop']."' >".$row['tinh']."</option>";
+                                            echo "<option value='".$row['tinhlop']."'data-data='".$row['idtinhlop']."' >".$row['tinh']."</option>";
                                              }
                                             }
                                 ?>
                             </select></td>
                             <td align="right">Tỉnh lớp 12</td>
-                            <td class="tinhlp12td"><select name="tinhlop12" class="tinhlp12" id="tinhlop12">
+                            <td class="tinhlp12td"><select name="tinhlop12" id="tinhlop12">
                                 <option value="">--Chọn--</option>
                                 <?php
                                             $sql = "SELECT * FROM tinhlop";
@@ -249,7 +253,7 @@
                                             if ($result->num_rows > 0) {
                                             // output data of each row
                                             while($row = $result->fetch_assoc()) {
-                                            echo "<option value='".$row['tinhlop']."'   data-data='".$row['idtinhlop']."' >".$row['tinh']."</option>";
+                                            echo "<option value='".$row['tinhlop']."'data-data='".$row['idtinhlop']."' >".$row['tinh']."</option>";
                                              }
                                             }
                                 ?>
@@ -285,7 +289,7 @@
                             <td>Năm tốt nghiệp THPT</td>
                             <td><input type="text" class="namtotnghiep" name="namtotnghiep"></td>
                             <td align="right">Điểm xét tuyển</td>
-                            <td><input type="text" class="diemxettuyen" name="diemxettuyen"></td>
+                            <td><input type="text" class="diemxettuyen" name="diemxettuyen" disabled="disabled"></td>
                         </tr>
                         <tr >
                             <td>Ghi chú</td>

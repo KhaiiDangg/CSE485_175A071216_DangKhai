@@ -74,6 +74,29 @@ $(document).ready(
                 });
             }
         );
+
+        $('input[name=diem10], input[name=diem11], input[name=diem12],input[name=diemxettuyen]').keyup(function()  {
+            var total = 0;
+            var $row = $(this).closest("table"); //this is the closest common root of the input elements
+            var diem10 = parseFloat( $row.find('input[name=diem10]').val() );
+            var diem11 = parseFloat( $row.find('input[name=diem11]').val() );
+            var diem12 = parseFloat( $row.find('input[name=diem12]').val() );
+             total = ((diem10 + diem11 + diem12)); 
+              $row.find('input[name=diemxettuyen]').val( total);
+               
+        });
+    
+    
+        $('input[name=diemmon1], input[name=diemmon2], input[name=diemmon3],input[name=tongdiem]').keyup(function()  {
+            var total = 0;
+            var $row = $(this).closest("table"); //this is the closest common root of the input elements
+            var mon1 = parseFloat( $row.find('input[name=diemmon1]').val() );
+            var mon2 = parseFloat( $row.find('input[name=diemmon2]').val() );
+            var mon3 = parseFloat( $row.find('input[name=diemmon3]').val() );
+             total = ((mon1 + mon2 + mon3)); 
+              $row.find('input[name=tongdiem]').val( total);
+               
+        });
     
     }
    
