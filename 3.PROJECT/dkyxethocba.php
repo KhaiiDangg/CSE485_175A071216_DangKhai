@@ -1,3 +1,55 @@
+<?php
+    include('app/database/config.php') ;
+    if($_POST) {
+        $hoten = $_POST['hoten'] ;  
+        $gioitinh = $_POST['gioitinh'] ;
+        $ngaysinh = $_POST['ngaysinh'] ;
+        $cmnd = $_POST['cmnd'] ;
+        $ngaycap = $_POST['ngaycap'] ;
+        $noicap = $_POST['noicap'] ;
+        $sdt = $_POST['sdt'] ;
+        $email = $_POST['email'] ;
+        $hokhau = $_POST['hokhau'] ;
+        $tinh = $_POST['tinh'] ;
+        $huyen = $_POST['huyen'] ;
+        $diachinhanthu = $_POST['diachinhanthu'] ;
+        $bacdaotao = $_POST['bacdaotao'] ;
+        $loaihinh = $_POST['loaihinh'] ;
+        $nganh = $_POST['nganh'] ;
+        $khuvucuutien = $_POST['khuvucuutien'] ;
+        $doituonguutien = $_POST['doituonguutien'] ;
+        $tinhlop10 = $_POST['tinhlop10'] ;
+        $tinhlop11 = $_POST['tinhlop11'] ;
+        $tinhlop12 = $_POST['tinhlop12'] ;
+        $truonglop10 = $_POST['truonglop10'] ;
+        $truonglop11 = $_POST['truonglop11'] ;
+        $truonglop12 = $_POST['truonglop12'] ;
+        $diem10 = $_POST['diem10'] ;
+        $diem11 = $_POST['diem11'] ;
+        $diem12 = $_POST['diem12'] ;
+        $namtotnghiep = $_POST['namtotnghiep'] ;
+        $diemxettuyen = $_POST['diemxettuyen'] ;
+        $ghichu = $_POST['ghichu'] ;
+
+        $sql = "INSERT INTO `hosocanhan`(`cmnd`, `hoten`, `gioitinh`, `ngaysinh`, `ngaycapcmnd`, `noicapcmnd`, `sdt`, `email`, `hokhau`, `tinh`, `huyen`, `diachinhanthu`) VALUES ($cmnd,'$hoten','$gioitinh','$ngaysinh','$ngaycap','$noicap','$sdt','$email','$hokhau','$tinh','$huyen','$diachinhanthu') " ;
+        $query = mysqli_query($conn, $sql);
+        if ($conn->query($sql) === true) {
+            echo "New record created successfully";
+          } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+          }
+
+        $sql = "INSERT INTO `xethocba`(`cmnd`, `bacdaotao`, `loaihinh`, `nganh`, `khuvucuutien`, `doituonguutien`, `tinhlop10`, `tinhlop11`, `tinhlop12`, `truonglop10`, `truonglop11`, `truonglop12`, `diemtblop10`, `diemtblop11`, `diemtblop12`, `diemxettuyen`, `namtotnghiep`, `ghichu`) VALUES ($cmnd,'$bacdaotao','$loaihinh','$nganh','$khuvucuutien','$doituonguutien','$tinhlop10','$tinhlop11','$tinhlop12','$truonglop10','$truonglop11','$truonglop12', $diem10 , $diem11 , $diem12 , $diemxettuyen , $namtotnghiep ,'$ghichu')" ;
+        // $query = mysqli_query($conn, $sql);  
+         if ($conn->query($sql) === TRUE) {
+            echo "New record created successfully";
+          } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+          }
+        // echo "<script type='text/javascript'>alert('Đăng ký thành công !');</script>"; 
+    }
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,6 +69,7 @@
     <?php include('app/include/header.php') ; ?>
 
     <!-- Middle Content-->
+    <form action="" method="post">
     <div class="middle">
         <div class="content">
             <h5>ĐĂNG KÝ XÉT HỌC BẠ <br> (XÉT TỔNG ĐIỂM TB CÁC MÔN LỚP 10 + LỚP 11 + HỌC KỲ 1 LỚP 12)</h5>
@@ -24,7 +77,7 @@
 
         <div class="main-content">
             <div class="table1">
-                <div class="title1"> Thông tin hồ sơ cá nhân</div>
+                <div class="title1"> Thông tin hồ sơ cá nhân </div>
                 <div class="tab1">
                     <table>
                         <tbody>
@@ -33,14 +86,14 @@
                                 <td> <input type="text" name="hoten" class="hoten"></td>
                                 <td class="gioitinhtd">Giới tính </td>
                                 <td class="namnutd">
-                                    <input type="radio" name="gioitinh" class="gioitinh" value="false">
+                                    <input type="radio" name="gioitinh" class="gioitinh" value="nam">
                                     <label for="">Nam</label>
     
-                                    <input type="radio" name="gioitinh" class="gioitinh" value="false">
+                                    <input type="radio" name="gioitinh" class="gioitinh" value="nu">
                                     <label for="">Nữ</label>
                                 </td>
                                 <td class="ngaysinhtd">Ngày sinh</td>
-                                <td><input type="date" class="ngaysinh"></td>
+                                <td><input type="date" class="ngaysinh" name="ngaysinh"></td>
                             </tr>
     
                             <tr>
@@ -64,13 +117,24 @@
                                 <td> <input type="text" name="hokhau" class="hokhau"></td>
                                 <td class="tinhtd">Tỉnh</td>
                                 <td>
-                                    <select name="tinh" id="" style="width:100%">
+                                    <select name="tinh" id="tinhhuyen" style="width:100%">
                                         <option value="">--Chọn--</option>
+                                        <?php
+                                            $sql = "SELECT * FROM tinhhuyen";
+                                            $result = $conn->query($sql);
+                
+                                            if ($result->num_rows > 0) {
+                                            // output data of each row
+                                            while($row = $result->fetch_assoc()) {
+                                            echo "<option value='".$row['tinhhuyen']."'   data-data='".$row['idtinh']."' >".$row['tentinh']."</option>";
+                                             }
+                                            }
+                                        ?>
                                     </select>
                                 </td>
                                 <td class="huyentd">Quận(Huyện)</td>
                                 <td>
-                                    <select name="huyen" class="tinh" style="width:100%">
+                                    <select name="huyen" class="tinh" id="huyen" style="width:100%">
                                         <option value="">--Chọn--</option>
                                     </select> 
                                 </td>
@@ -87,6 +151,8 @@
                             </tr>
                         </tbody>
                     </table>
+                    </form>
+                    
                 </div>
             </div>
 
@@ -94,21 +160,32 @@
                <div class="title2"> Thông tin đăng ký xét tuyển</div>
                <div class="tab2">
                    <table>
-                       <tbody>
+                       <tbody>      
                            <tr>
                                <td>Bậc đào tạo</td>
                                <td><select name="bacdaotao" class="bacdaotao">
                                    <option value="">--Chọn--</option>
-                                   <option value="">Đại học</option>
+                                   <option value="Đại học">Đại học</option>
                                   </select>
                             </td>
                             <td align="right">Loại hình</td>
-                            <td><select name="loaihinh" id="" style="width:100%">
+                            <td><select name="loaihinh" id="loaihinh" style="width:100%">
                                 <option value="">--Chọn--</option>
+                                <?php
+                                            $sql = "SELECT * FROM loaihinh";
+                                            $result = $conn->query($sql);
+                
+                                            if ($result->num_rows > 0) {
+                                            // output data of each row
+                                            while($row = $result->fetch_assoc()) {
+                                            echo "<option value='".$row['loaihinh']."'   data-data='".$row['idloaihinh']."' >".$row['loaihinh']."</option>";
+                                             }
+                                            }
+                                        ?>
                             </select>
                             </td>
                             <td align="right">Nghành</td>
-                            <td><select name="" id="" style="width:100%">
+                            <td><select name="nganh" id="nghanh" style="width:230px">
                                 <option value="">--Chọn--</option>
                             </select>
                             </td>
@@ -116,46 +193,81 @@
 
                         <tr>
                             <td>Khu vực ƯT</td>
-                            <td><select name="kvut" class="kvut">
+                            <td><select name="khuvucuutien" class="khuvucuutien">
                                 <option value="">--Chọn--</option>
-                                <option value="">Đại học</option>
+                                <option value="Khu vực 1">Khu vực 1</option>
+                                <option value="Khu vực 2">Khu vực 2</option>
+                                <option value="Khu vực 3">Khu vực 3</option>
                                </select>
                          </td>
                          <td align="right">Đối tượng ƯT</td>
-                         <td><select name="doituongut" style="width:100%">
+                         <td><select name="doituonguutien" style="width:100%">
                             <option value="">--Chọn--</option>
+                            <option value="Đối tượng 1">Đối tượng 1</option>
+                            <option value="Đối tượng 2">Đối tượng 2</option>
+                            <option value="Đối tượng 3">Đối tượng 3</option>
                         </select>
                         </td>
                         </tr>
 
                         <tr>
                             <td><span>Tên tỉnh</span></td>
-                            <td class="tinhlp10td" align="right">Tỉnh lớp 10</td>
-                            <td class="tinhlp10sel"><select name="tinhlp10" class="tinhlp10">
-                                <option value="">--Chọn--</option>
-                            </select></td>
+                                            <td class="tinhlp10td" align="right">Tỉnh lớp 10</td>
+                                            <td class="tinhlp10sel"><select name="tinhlop10" class="tinhlp10" id="tinhlop10" style="width:100%;">
+                                                <option value="">--Chọn--</option>
+                                                <?php
+                                                            $sql = "SELECT * FROM tinhlop";
+                                                            $result = $conn->query($sql);
+                                                            if ($result->num_rows > 0) {
+                                                            // output data of each row
+                                                            while($row = $result->fetch_assoc()) {
+                                                            echo "<option value='".$row['tinhlop']."'   data-data='".$row['idtinhlop']."' >".$row['tinh']."</option>";
+                                                            }
+                                                            }
+                                                ?>
+                                            </select></td>
                             <td class="tinhlp11td" align="right">Tỉnh lớp 11</td>
-                            <td><select name="tinhlp11" class="tinhlp11">
+                            <td><select name="tinhlop11" class="tinhlp11" id="tinhlop11">
                                 <option value="">--Chọn--</option>
+                                <?php
+                                            $sql = "SELECT * FROM tinhlop";
+                                            $result = $conn->query($sql);
+                                            if ($result->num_rows > 0) {
+                                            // output data of each row
+                                            while($row = $result->fetch_assoc()) {
+                                            echo "<option value='".$row['tinhlop']."'   data-data='".$row['idtinhlop']."' >".$row['tinh']."</option>";
+                                             }
+                                            }
+                                ?>
                             </select></td>
-                            <td>Tỉnh lớp 12</td>
-                            <td class="tinhlp12td"><select name="tinhlp12" class="tinhlp12">
+                            <td align="right">Tỉnh lớp 12</td>
+                            <td class="tinhlp12td"><select name="tinhlop12" class="tinhlp12" id="tinhlop12">
                                 <option value="">--Chọn--</option>
+                                <?php
+                                            $sql = "SELECT * FROM tinhlop";
+                                            $result = $conn->query($sql);
+                                            if ($result->num_rows > 0) {
+                                            // output data of each row
+                                            while($row = $result->fetch_assoc()) {
+                                            echo "<option value='".$row['tinhlop']."'   data-data='".$row['idtinhlop']."' >".$row['tinh']."</option>";
+                                             }
+                                            }
+                                ?>
                             </select></td>
                         </tr>
 
                         <tr>
                             <td>Tên trường THPT</td>
                             <td align="right">Lớp 10</td>
-                            <td class="truonglop10td"><select name="truonglop10" class="truonglop10">
+                            <td class="truonglop10td"><select name="truonglop10" class="truonglop10" id="tinhtruong10">
                                 <option value="">--Chọn--</option>
                             </select></td>
                             <td class="truonglop11td" align="right">Lớp 11</td>
-                            <td><select name="truonglop11" class="truonglop11">
+                            <td><select name="truonglop11" class="truonglop11" id="tinhtruong11">
                                 <option value="">--Chọn--</option>
                             </select></td>
                             <td class="truonglop12td" align="right">Lớp 12</td>
-                            <td><select name="truonglop12" class="truonglop12">
+                            <td><select name="truonglop12" class="truonglop12" id="tinhtruong12">
                                 <option value="">--Chọn--</option>
                             </select></td>
                         </tr>
@@ -163,21 +275,21 @@
                         <tr>
                             <td>Điểm TB các môn</td>
                             <td align="right">Lớp 10</td>
-                            <td><input type="text" class="diem10"></td>
+                            <td><input type="text" name="diem10" class="diem10"></td>
                             <td align="right">Lớp 11</td>
-                            <td><input type="text" class="diem11"></td>
+                            <td><input type="text" name="diem11" class="diem11"></td>
                             <td align="right">Lớp 12</td>
-                            <td><input type="text" class="diem12"></td>
+                            <td><input type="text" name="diem12" class="diem12"></td>
                         </tr>
                         <tr>
                             <td>Năm tốt nghiệp THPT</td>
-                            <td><input type="text" class="namtotnghiep"></td>
+                            <td><input type="text" class="namtotnghiep" name="namtotnghiep"></td>
                             <td align="right">Điểm xét tuyển</td>
-                            <td><input type="text" class="diemxettuyen"></td>
+                            <td><input type="text" class="diemxettuyen" name="diemxettuyen"></td>
                         </tr>
                         <tr >
                             <td>Ghi chú</td>
-                            <td colspan="6"><input type="text" class="ghichu" id="ghichu" style="width: 100%;"></td>
+                            <td colspan="6"><input type="text" class="ghichu" id="ghichu" name="ghichu" style="width: 100%;"></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
@@ -185,13 +297,17 @@
                         </tr>
                        </tbody>
                    </table>
+                   
+                   
                </div>
            </div>
             </div class="btndangky">
-                 <p> <input type="submit" class="btndky" value="ĐĂNG KÝ"> </p>
+                <p> <input type="submit" class="btndky" value="ĐĂNG KÝ"> </p>
             </div> 
         </div>
     </div>
+    </form>
+    
 
     <!--Footer -->
     <?php include('app/include/footer.php') ; ?>
@@ -201,9 +317,10 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="assets/js/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/ajax.js"></script>
   </body>
 </html>

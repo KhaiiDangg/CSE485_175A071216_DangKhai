@@ -123,7 +123,7 @@
                         <td class ="doituonguttd" align="right">Đối tượng ƯT
                         </td>
                         <td class="doituonguttdsel">
-                            <select name="doituongut" style="width: 100%;">
+                            <select name="doituongut">
                                 <option value="">--Chọn--</option>
                             </select>
                         </td>
@@ -163,7 +163,7 @@
                     </tr>
                     <tr>
                         <td> Ghi chú </td>
-                        <td colspan="6"> <input name="ghichu" type="text" class="ghichu" style="width: 100%;"></td>
+                        <td colspan="6"> <input name="ghichu" type="text" class="ghichu" style="width: 945px;"></td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
