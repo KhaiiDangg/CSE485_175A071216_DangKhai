@@ -32,18 +32,18 @@
         $ghichu = $_POST['ghichu'] ;
 
         $sql = "INSERT INTO hosocanhan(cmnd, hoten, gioitinh, ngaysinh, ngaycapcmnd, noicapcmnd, sdt, email, hokhau, tinh, huyen, diachinhanthu) VALUES ($cmnd,'$hoten','$gioitinh','$ngaysinh','$ngaycap','$noicap','$sdt','$email','$hokhau','$tinh','$huyen','$diachinhanthu') " ;
-        $query = mysqli_query($conn, $sql);
-        if ($conn->query($sql) === TRUE) {
+        $query = mysqli_query($db_connection, $sql);
+        if ($db_connection->query($sql) === TRUE) {
             echo "New record created successfully";
           } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error: " . $sql . "<br>" . $db_connection->error;
           }
 
         $sql = "INSERT INTO xethocba(cmnd, bacdaotao, loaihinh, nganh, khuvucuutien, doituonguutien, tinhlop10, tinhlop11, tinhlop12, truonglop10, truonglop11, truonglop12, diemtblop10, diemtblop11, diemtblop12, diemxettuyen, namtotnghiep, ghichu) VALUES ($cmnd,'$bacdaotao','$loaihinh','$nganh','$khuvucuutien','$doituonguutien','$tinhlop10','$tinhlop11','$tinhlop12','$truonglop10','$truonglop11','$truonglop12', $diem10 , $diem11 , $diem12 , $diemxettuyen , $namtotnghiep ,'$ghichu')" ; 
-         if ($conn->query($sql) === TRUE) {
+         if ($db_connection->query($sql) === TRUE) {
             echo "New record created successfully";
           } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error: " . $sql . "<br>" . $db_connection->error;
           }
         // echo "<script type='text/javascript'>alert('Đăng ký thành công !');</script>"; 
     }
@@ -120,7 +120,7 @@
                                         <option value="">--Chọn--</option>
                                         <?php
                                             $sql = "SELECT * FROM tinhhuyen";
-                                            $result = $conn->query($sql);
+                                            $result = $db_connection->query($sql);
                 
                                             if ($result->num_rows > 0) {
                                             // output data of each row
@@ -172,7 +172,7 @@
                                 <option value="">--Chọn--</option>
                                 <?php
                                             $sql = "SELECT * FROM loaihinh";
-                                            $result = $conn->query($sql);
+                                            $result = $db_connection->query($sql);
                 
                                             if ($result->num_rows > 0) {
                                             // output data of each row
@@ -221,7 +221,7 @@
                                                 <option value="">--Chọn--</option>
                                                 <?php
                                                             $sql = "SELECT * FROM tinhlop";
-                                                            $result = $conn->query($sql);
+                                                            $result = $db_connection->query($sql);
                                                             if ($result->num_rows > 0) {
                                                             // output data of each row
                                                             while($row = $result->fetch_assoc()) {
@@ -235,7 +235,7 @@
                                 <option value="">--Chọn--</option>
                                 <?php
                                             $sql = "SELECT * FROM tinhlop";
-                                            $result = $conn->query($sql);
+                                            $result = $db_connection->query($sql);
                                             if ($result->num_rows > 0) {
                                             // output data of each row
                                             while($row = $result->fetch_assoc()) {
@@ -249,7 +249,7 @@
                                 <option value="">--Chọn--</option>
                                 <?php
                                             $sql = "SELECT * FROM tinhlop";
-                                            $result = $conn->query($sql);
+                                            $result = $db_connection->query($sql);
                                             if ($result->num_rows > 0) {
                                             // output data of each row
                                             while($row = $result->fetch_assoc()) {

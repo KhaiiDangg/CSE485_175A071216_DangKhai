@@ -9,9 +9,9 @@
               <div class="col-lg-5 flex">
                   
                   <div class="col-md-4 menu-top">
-                      <a class="nav-link" href="http://cse.tlu.edu.vn/Login?returnurl=%2f"> Login |</a>
+                      <a class="nav-link" href="login.php"> Login |</a>
                   </div>
-                  <div class="col-md-4 menu-top"><a class="nav-link" href="http://cse.tlu.edu.vn/Register?returnurl=http%3a%2f%2fcse.tlu.edu.vn%2f">Register
+                  <div class="col-md-4 menu-top"><a class="nav-link" href="register.php">Register
                                       |</a>
                   </div>
                   <div class="col-md-4 menu-top">

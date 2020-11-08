@@ -1,12 +1,7 @@
-<?php 
-$host = 'localhost' ;
-$user = 'root' ;
-$pass = '';
-$db_name = 'project' ;
-
-$conn = new mysqli($host, $user, $pass, $db_name) ;
-
-if ($conn->connect_error) {
-    die('Kết nối với Database thất bại' . $conn->connect_error) ;
+<?php
+$db_connection = mysqli_connect("localhost","root","","project");
+// Check connection
+if (mysqli_connect_errno()){
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 ?>

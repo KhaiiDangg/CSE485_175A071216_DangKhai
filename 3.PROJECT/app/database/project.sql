@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2020 at 02:02 PM
+-- Generation Time: Nov 08, 2020 at 05:43 PM
 -- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.33
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,10 +37,31 @@ CREATE TABLE `hosocanhan` (
   `sdt` varchar(500) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `hokhau` varchar(500) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `tinh` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `tinh` varchar(500) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `huyen` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `diachinhanthu` varchar(500) COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `hosocanhan`
+--
+
+INSERT INTO `hosocanhan` (`cmnd`, `hoten`, `gioitinh`, `ngaysinh`, `ngaycapcmnd`, `noicapcmnd`, `sdt`, `email`, `hokhau`, `tinh`, `huyen`, `diachinhanthu`) VALUES
+(1, '', 'nam', '', '', '', '', '', '', '', '', ''),
+(2, 'lgkjafljglkaf', 'nu', '2020-11-09', '2020-11-10', 'sfdkgjlaksdg', '67856908756', 'dangkhai@gmail.com', 'fgkjsdflgjlksf', '', 'Hoàn Kiếm', 'flhjfdshjlkdsfh'),
+(4, '', 'false', '', '', '', '', '', '', '', '', ''),
+(5, '', 'false', '', '', '', '', '', '', '', '', ''),
+(6, '', 'Nam', '', '', '', '', '', '', '', '', ''),
+(66, '', 'nam', '', '', '', '', '', '', '', '', ''),
+(333, 'khai', 'Nam', '2020-11-18', '2020-11-11', 'Hà Nội', '9024859024859024', 'sdgasd', 'fgkjsdflgjlksf', '', 'Ba Đình', 'kldasjgklasdjgkl'),
+(399, '', 'Nam', '', '', '', '', '', '', '', '', ''),
+(675, '', 'nam', '', '', '', '', '', '', '', '', ''),
+(747, '', 'nu', '', '', '', '', '', '', '', '', ''),
+(777, '', 'nam', '', '', '', '', '', '', '', '', ''),
+(2222, '', 'Nam', '', '', '', '', '', '', '', '', ''),
+(7676, 'dsafasd', 'Nam', '2020-11-17', '2020-11-19', '', '7676575675', 'ádgasdga', 'ádgasdg', '', 'Quận 3', 'ádgadsgadsg'),
+(471471, 'Nguyễn Văn B', 'Nam', '2020-11-01', '2020-11-06', 'ưeqrqwer', '01234567', 'ewqtqwetqwe', 'qioewutiowqeuio', '', 'Quận 3', 'qewtqwetqwe'),
+(123456789, 'Đặng Khải', 'nam', '1999-04-28', '2020-11-01', 'Hà Nội', '0869872610', 'dangkhai@gmail.com', 'jldfghasgjklaskldg', '', 'Ba Đình', 'kldasjgklasdjgkl');
 
 -- --------------------------------------------------------
 
@@ -136,36 +157,24 @@ INSERT INTO `loaihinh` (`idloaihinh`, `loaihinh`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lop`
+-- Table structure for table `nghanh`
 --
 
-CREATE TABLE `lop` (
-  `idlop` int(11) NOT NULL,
-  `lop` int(11) NOT NULL,
-  `idtinhlop` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `nganh`
---
-
-CREATE TABLE `nganh` (
+CREATE TABLE `nghanh` (
   `idnganh` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `nganh` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `idloaihinh` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
--- Dumping data for table `nganh`
+-- Dumping data for table `nghanh`
 --
 
-INSERT INTO `nganh` (`idnganh`, `nganh`, `idloaihinh`) VALUES
+INSERT INTO `nghanh` (`idnganh`, `nganh`, `idloaihinh`) VALUES
 ('TLA201', 'Kỹ thuật xây dựng\r\n', 1),
 ('TLA202', 'Kỹ thuật tài nguyên nước', 1),
 ('TLA203', 'Kỹ thuật xây dựng công trình thủy', 1),
-('TLA204', 'Kỹ thuật xây dựng', 1),
+('TLA204', 'Quản trị kinh doanh', 1),
 ('TLA205', 'Công nghệ kỹ thuật xây dựng', 1),
 ('TLA206', 'Kỹ thuật xây dựng công trình giao thông', 1),
 ('TLA207', 'Kỹ thuật cấp thoát nước', 1),
@@ -201,6 +210,55 @@ CREATE TABLE `tinhlop` (
   `tinh` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
+--
+-- Dumping data for table `tinhlop`
+--
+
+INSERT INTO `tinhlop` (`idtinhlop`, `tinh`) VALUES
+(1, 'Hà Nội'),
+(2, 'TP Hồ Chí Minh');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tinhtruong`
+--
+
+CREATE TABLE `tinhtruong` (
+  `id` int(11) NOT NULL,
+  `truong` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `idtinhlop` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `tinhtruong`
+--
+
+INSERT INTO `tinhtruong` (`id`, `truong`, `idtinhlop`) VALUES
+(1, 'THPT Phạm Hồng Thái', 1),
+(2, 'THPT Lê Quý Đôn', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `email` varchar(500) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `email`, `password`, `created_at`) VALUES
+(1, 'khai', 'dangkhai284@gmail.com', '$2y$10$QIGiLrEEEWg4h9CP7nXtCeUa7uTfYgv9uvlNCJLviTqPqMKeBcuIe', '2020-11-08 21:36:53');
+
 -- --------------------------------------------------------
 
 --
@@ -221,6 +279,14 @@ CREATE TABLE `xetdiemthi` (
   `tongdiem` double NOT NULL,
   `ghichu` varchar(500) COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Dumping data for table `xetdiemthi`
+--
+
+INSERT INTO `xetdiemthi` (`iddiemthi`, `cmnd`, `bacdaotao`, `nganh`, `tohopmon`, `khuvucuutien`, `doituonguutien`, `diemmon1`, `diemmon2`, `diemmon3`, `tongdiem`, `ghichu`) VALUES
+(1, 399, 'Đại học', '', '', '', '', 0, 0, 0, 0, ''),
+(2, 471471, 'Đại học', 'TLA202 : Kỹ thuật tài nguyên nước', 'A02: Toán , Vật Lý , Sinh học', 'Khu vực 02', 'Dối tượng 02', 7, 5, 7, 19, 'rêtrtwertrewtre');
 
 -- --------------------------------------------------------
 
@@ -251,6 +317,13 @@ CREATE TABLE `xethocba` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
+-- Dumping data for table `xethocba`
+--
+
+INSERT INTO `xethocba` (`idhocba`, `cmnd`, `bacdaotao`, `loaihinh`, `nganh`, `khuvucuutien`, `doituonguutien`, `tinhlop10`, `tinhlop11`, `tinhlop12`, `truonglop10`, `truonglop11`, `truonglop12`, `diemtblop10`, `diemtblop11`, `diemtblop12`, `diemxettuyen`, `namtotnghiep`, `ghichu`) VALUES
+(14, 7676, 'Đại học', 'Chính quy', 'Kỹ thuật xây dựng công trình thủy', 'Khu vực 01', 'Dối tượng 02', '', '', '', 'THPT Phạm Hồng Thái', 'THPT Phạm Hồng Thái', 'THPT Phạm Hồng Thái', 5, 3, 5, 12, 2012, 'sdasdfasdfads');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -274,16 +347,9 @@ ALTER TABLE `loaihinh`
   ADD PRIMARY KEY (`idloaihinh`);
 
 --
--- Indexes for table `lop`
+-- Indexes for table `nghanh`
 --
-ALTER TABLE `lop`
-  ADD PRIMARY KEY (`idlop`),
-  ADD KEY `idtinhlop` (`idtinhlop`);
-
---
--- Indexes for table `nganh`
---
-ALTER TABLE `nganh`
+ALTER TABLE `nghanh`
   ADD PRIMARY KEY (`idnganh`),
   ADD KEY `idloaihinh` (`idloaihinh`);
 
@@ -300,6 +366,21 @@ ALTER TABLE `tinhlop`
   ADD PRIMARY KEY (`idtinhlop`);
 
 --
+-- Indexes for table `tinhtruong`
+--
+ALTER TABLE `tinhtruong`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idtinhlop` (`idtinhlop`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- Indexes for table `xetdiemthi`
 --
 ALTER TABLE `xetdiemthi`
@@ -311,7 +392,8 @@ ALTER TABLE `xetdiemthi`
 --
 ALTER TABLE `xethocba`
   ADD PRIMARY KEY (`idhocba`),
-  ADD KEY `cmnd` (`cmnd`);
+  ADD KEY `cmnd` (`cmnd`),
+  ADD KEY `cmnd_2` (`cmnd`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -339,7 +421,25 @@ ALTER TABLE `tinhhuyen`
 -- AUTO_INCREMENT for table `tinhlop`
 --
 ALTER TABLE `tinhlop`
-  MODIFY `idtinhlop` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idtinhlop` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `xetdiemthi`
+--
+ALTER TABLE `xetdiemthi`
+  MODIFY `iddiemthi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `xethocba`
+--
+ALTER TABLE `xethocba`
+  MODIFY `idhocba` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
@@ -352,16 +452,16 @@ ALTER TABLE `huyen`
   ADD CONSTRAINT `huyen_ibfk_1` FOREIGN KEY (`idtinh`) REFERENCES `tinhhuyen` (`idtinh`);
 
 --
--- Constraints for table `lop`
+-- Constraints for table `nghanh`
 --
-ALTER TABLE `lop`
-  ADD CONSTRAINT `lop_ibfk_1` FOREIGN KEY (`idtinhlop`) REFERENCES `tinhlop` (`idtinhlop`);
+ALTER TABLE `nghanh`
+  ADD CONSTRAINT `nghanh_ibfk_1` FOREIGN KEY (`idloaihinh`) REFERENCES `loaihinh` (`idloaihinh`);
 
 --
--- Constraints for table `nganh`
+-- Constraints for table `tinhtruong`
 --
-ALTER TABLE `nganh`
-  ADD CONSTRAINT `nganh_ibfk_1` FOREIGN KEY (`idloaihinh`) REFERENCES `loaihinh` (`idloaihinh`);
+ALTER TABLE `tinhtruong`
+  ADD CONSTRAINT `tinhtruong_ibfk_1` FOREIGN KEY (`idtinhlop`) REFERENCES `tinhlop` (`idtinhlop`);
 
 --
 -- Constraints for table `xetdiemthi`

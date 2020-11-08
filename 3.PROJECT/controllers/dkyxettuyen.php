@@ -25,18 +25,18 @@
         $ghichu = $_POST['ghichu'] ;
 
         $sql = "INSERT INTO hosocanhan (cmnd, hoten, gioitinh, ngaysinh, ngaycapcmnd, noicapcmnd, sdt, email, hokhau, tinh, huyen, diachinhanthu) VALUES ($cmnd,'$hoten','$gioitinh','$ngaysinh','$ngaycap','$noicap','$sdt','$email','$hokhau','$tinh','$huyen','$diachinhanthu') " ;
-        $query = mysqli_query($conn, $sql);
-        if ($conn->query($sql) === TRUE) {
+        $query = mysqli_query($db_connection, $sql);
+        if ($db_connection->query($sql) === TRUE) {
             echo "New record created successfully";
           } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error: " . $sql . "<br>" . $db_connection->error;
           }
 
         $sql = "INSERT INTO xetdiemthi (cmnd, bacdaotao, nganh, tohopmon, khuvucuutien, doituonguutien, diemmon1, diemmon2, diemmon3, tongdiem, ghichu) VALUES ($cmnd ,'$bacdaotao','$nganh','$tohop','$kvut','$doituongut','$diemmon1','$diemmon2','$diemmon3','$tongdiem','$ghichu')";
-        if ($conn->query($sql) === TRUE) {
+        if ($db_connection->query($sql) === TRUE) {
             echo "New record created successfully";
           } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error: " . $sql . "<br>" . $db_connection->error;
           }
 
     }
@@ -110,7 +110,7 @@
                                         <option value="">--Chọn--</option>
                                         <?php
                                             $sql = "SELECT * FROM tinhhuyen";
-                                            $result = $conn->query($sql);
+                                            $result = $db_connection->query($sql);
                 
                                             if ($result->num_rows > 0) {
                                             // output data of each row
