@@ -144,7 +144,183 @@ p {
    z-index: 999;
    min-width: 250px;
   }
+.page-wrapper {
+    min-height: 100%;
+}
 
+.page-wrapper a:hover {
+    color: rgb(39, 39, 39) ;
+}
+/* POST SLIDER */
+.post-slider {
+    position: relative; 
+
+}
+.post-slider .slider-title {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.post-slider .next {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    font-size: 2em;
+    color: black ;
+    cursor: pointer;
+}
+.post-slider .prev {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    font-size: 2em;
+    color: black;
+    cursor: pointer;
+}
+
+.post-slider .post-wrapper {
+    width: 84%;
+    height: 350px;
+    margin: 0px auto ;
+    overflow: hidden;
+
+}
+.post-slider .post-wrapper .post{
+    width: 300px;
+    height: 350px;
+    margin: 0px 10px;
+    display: inline-block;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 1rem 1rem 1rem -1rem black;
+}
+
+.post-slider .post-wrapper .post .post-info {
+    height: 130px;
+    padding: 0px 5px;
+}
+
+.post-slider .post-wrapper .post .slider-image {
+   width: 100%;
+   height: 200px;
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+}
+
+/* CONTENT */
+.content {
+    width: 90%;
+    margin: 30px auto 30px ;
+}
+
+.content .main-content {
+    width: 70%;
+    float: left;
+}
+
+.img-post kobe {
+    width: 100%;
+    height: 400px;
+}
+.content .main-content.single {
+    background:rgb(236, 236, 236);
+    padding: 20px 50px;
+    font-size: 1.1em;
+    border-radius: 5px;
+}
+
+.content .main-content.single .post-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.content .main-content .post {
+    width: 95%;
+    height: 270px;
+    margin: 20px auto;
+    border-radius: 5px;
+    background : rgb(236, 236, 236) ;
+    position: relative;
+}
+
+.content .popular .post{
+   border-top: 1px solid lightgray ;
+   margin-top: 10px;
+   padding-top: 10px;
+}
+
+.content .popular .post img {
+    height:  60px;
+    width: 75px;
+    float: left;
+    margin-right: 10px;
+}
+
+.content .main-content .post .read-more {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.content .main-content .post .post-image {
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+
+.content .main-content .post .post-preview {
+    width: 60%;
+    padding: 10px;
+    float: right;
+}
+
+.content .main-content .recent-post-title {
+    margin: 20px ;
+}
+.content .sidebar {
+    padding-top: 80px;
+    width: 30%;
+    float: left;
+    height: 300px;
+}
+.content .sidebar.single {
+    padding: 0px 10px;
+}
+
+.content .sidebar .section {
+    background:  rgb(236, 236, 236);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.content .sidebar .section .section-title {
+    margin: 10px 0px 10px 0px;
+}
+
+.content .sidebar .section.search {
+    margin-top: 70px;
+}
+
+.content .sidebar .section.topics ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    border-top: 1px solid lightgrey;
+    
+}
+
+.content .sidebar .section.topics ul li a {
+    border-bottom: 1px solid lightgrey;
+    display: block;
+    padding: 15px 0px 15px 0px;
+    transition: all 0.3s;
+}
+
+.content .sidebar .section.topics ul li a:hover {
+    padding-left: 10px;
+    transition: all 0.3s;
+}
 /*Middle-Content  */
 .middle {
     width: 95%;
