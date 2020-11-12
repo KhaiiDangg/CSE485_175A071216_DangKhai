@@ -31,17 +31,18 @@
         $diemxettuyen = $_POST['diemxettuyen'] ;
         $ghichu = $_POST['ghichu'] ;
 
-        $sql = "INSERT INTO hosocanhan(cmnd, hoten, gioitinh, ngaysinh, ngaycapcmnd, noicapcmnd, sdt, email, hokhau, tinh, huyen, diachinhanthu) VALUES ($cmnd,'$hoten','$gioitinh','$ngaysinh','$ngaycap','$noicap','$sdt','$email','$hokhau','$tinh','$huyen','$diachinhanthu') " ;
+        $sql = "INSERT INTO hosocanhan (cmnd, hoten, gioitinh, ngaysinh, ngaycapcmnd, noicapcmnd, sdt, email, hokhau, tinh, huyen, diachinhanthu) VALUES ($cmnd,'$hoten','$gioitinh','$ngaysinh','$ngaycap','$noicap','$sdt','$email','$hokhau','$tinh','$huyen','$diachinhanthu') " ;
+        //echo $sql;
         $query = mysqli_query($db_connection, $sql);
         if ($db_connection->query($sql) === TRUE) {
-            echo "New record created successfully";
+            //echo "New record created successfully";
           } else {
             echo "Error: " . $sql . "<br>" . $db_connection->error;
           }
 
-        $sql = "INSERT INTO xethocba(cmnd, bacdaotao, loaihinh, nganh, khuvucuutien, doituonguutien, tinhlop10, tinhlop11, tinhlop12, truonglop10, truonglop11, truonglop12, diemtblop10, diemtblop11, diemtblop12, diemxettuyen, namtotnghiep, ghichu) VALUES ($cmnd,'$bacdaotao','$loaihinh','$nganh','$khuvucuutien','$doituonguutien','$tinhlop10','$tinhlop11','$tinhlop12','$truonglop10','$truonglop11','$truonglop12', $diem10 , $diem11 , $diem12 , $diemxettuyen , $namtotnghiep ,'$ghichu')" ; 
+        $sql = "INSERT INTO xethocba (cmnd, bacdaotao, loaihinh, nganh, khuvucuutien, doituonguutien, tinhlop10, tinhlop11, tinhlop12, truonglop10, truonglop11, truonglop12, diemtblop10, diemtblop11, diemtblop12, diemxettuyen, namtotnghiep, ghichu) VALUES ($cmnd,'$bacdaotao','$loaihinh','$nganh','$khuvucuutien','$doituonguutien','$tinhlop10','$tinhlop11','$tinhlop12','$truonglop10','$truonglop11','$truonglop12', '$diem10' , '$diem11' , '$diem12' , $diemxettuyen , '$namtotnghiep' ,'$ghichu')" ; 
          if ($db_connection->query($sql) === TRUE) {
-            echo "New record created successfully";
+            //echo "New record created successfully";
           } else {
             echo "Error: " . $sql . "<br>" . $db_connection->error;
           }
@@ -125,7 +126,7 @@
                                             if ($result->num_rows > 0) {
                                             // output data of each row
                                             while($row = $result->fetch_assoc()) {
-                                            echo "<option value='".$row['tinhhuyen']."'data-data='".$row['idtinh']."' >".$row['tentinh']."</option>";
+                                            echo "<option value='".$row['tentinh']."'data-data='".$row['idtinh']."' >".$row['tentinh']."</option>";
                                              }
                                             }
                                         ?>
@@ -225,7 +226,7 @@
                                                             if ($result->num_rows > 0) {
                                                             // output data of each row
                                                             while($row = $result->fetch_assoc()) {
-                                                            echo "<option value='".$row['tinhlop']."'data-data='".$row['idtinhlop']."' >".$row['tinh']."</option>";
+                                                            echo "<option value='".$row['tinh']."'data-data='".$row['idtinhlop']."' >".$row['tinh']."</option>";
                                                             }
                                                         }
                                                 ?>
@@ -239,7 +240,7 @@
                                             if ($result->num_rows > 0) {
                                             // output data of each row
                                             while($row = $result->fetch_assoc()) {
-                                            echo "<option value='".$row['tinhlop']."'data-data='".$row['idtinhlop']."' >".$row['tinh']."</option>";
+                                            echo "<option value='".$row['tinh']."'data-data='".$row['idtinhlop']."' >".$row['tinh']."</option>";
                                              }
                                             }
                                 ?>
@@ -253,7 +254,7 @@
                                             if ($result->num_rows > 0) {
                                             // output data of each row
                                             while($row = $result->fetch_assoc()) {
-                                            echo "<option value='".$row['tinhlop']."'data-data='".$row['idtinhlop']."' >".$row['tinh']."</option>";
+                                            echo "<option value='".$row['tinh']."'data-data='".$row['idtinhlop']."' >".$row['tinh']."</option>";
                                              }
                                             }
                                 ?>
@@ -289,7 +290,7 @@
                             <td>Năm tốt nghiệp THPT</td>
                             <td><input type="text" class="namtotnghiep" name="namtotnghiep"></td>
                             <td align="right">Điểm xét tuyển</td>
-                            <td><input type="text" class="diemxettuyen" name="diemxettuyen" disabled="disabled"></td>
+                            <td><input type="text" class="diemxettuyen" name="diemxettuyen"></td>
                         </tr>
                         <tr >
                             <td>Ghi chú</td>

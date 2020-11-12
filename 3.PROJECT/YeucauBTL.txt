@@ -1,7 +1,0 @@
- __________________________BÀI TẬP PROJECT CUỐI KÌ (Dành cho K60PM và những bạn chưa học với K60HT ở môn Nền tảng Web)_____________________________________
-
-Hãy chỉ ra các vấn đề hiện tại cần khắc phục trên trang Web của khoa CNTT tại địa chỉ: cse.tlu.edu.vn
-Đề xuất và Thiết kế lại trang Web của Khoa sao cho phù hợp với mục tiêu của một trang cập nhật Tin tức về Giáo dục và hướng tới 3 đối tượng (Sinh viên/Học viên cao học; Cựu sinh viên/Cựu học viên cao học; Thí sinh/Phụ huynh) có nhu cầu tìm hiểu các thông tin và hoạt động  của Khoa VÀ (chọn 1 trong 2 nhánh ở dưới)
-
-A) Có tính năng Xét tuyển học bạ (nộp hồ sơ Online) của thí sinh Xét tuyển vào Đại học.
-B) hoặc Có Diễn đàn trao đổi thông tin.

@@ -1,0 +1,68 @@
+/*Middle-Content  */
+.middle {
+    width: 80rem;
+    height: 600px;
+    margin: 10px 0px 10px 250px;
+}
+.middle h5{
+    text-align: center;
+}
+.table1 , .table2{
+    border-radius: 3px;
+    border: 1px solid #707070;
+    font-weight: bold;
+    background-color: white;
+}
+.table1 .title1 {
+    margin-bottom: 20px;
+    
+}
+.table2 .title2 {
+    margin-bottom: 20px;
+    
+}
+.gioitinhtd , .ngaycaptd , .emailtd , .tinhtd , .ngaysinhtd , .noicaptd , .huyentd{
+    padding-left: 80px;
+}
+.namnutd {
+    padding-top: 10px;
+}
+input {
+    padding: 2px 0 0 0;
+    border-style: none;
+    background-color: #f2f2f2;
+}
+select {
+   border-style: none;
+   background-color: #f2f2f2 ;
+}
+.table2 {
+    margin-top: 10px;
+}
+.nganhtd {
+    padding-left: 15px;
+}
+.dhocradio {
+    margin-top: 7px;
+}
+.kvuttd {
+    width: 7rem;
+    padding-left: 1px;
+}
+.doituonguttd {
+    width: 7rem;
+}
+.doituonguttdsel {
+    padding-right: 12px;
+}
+.ghichu {
+    width: 600px ;
+}
+.btndky {
+    margin-top: 20px ;
+    font-weight: 700;
+    background-color: #747474 ;
+    color: white;
+    width: 200px;
+    
+}

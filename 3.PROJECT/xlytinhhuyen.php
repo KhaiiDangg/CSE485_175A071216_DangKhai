@@ -3,7 +3,7 @@ include('app/database/config.php') ;
 
 $id = $_POST['id'];
 $sql = "SELECT * FROM `huyen` WHERE `idtinh`=$id";
-$result = $conn->query($sql);
+$result = $db_connection->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row

@@ -115,7 +115,7 @@
                                             if ($result->num_rows > 0) {
                                             // output data of each row
                                             while($row = $result->fetch_assoc()) {
-                                            echo "<option value='".$row['tinhhuyen']."'data-data='".$row['idtinh']."' >".$row['tentinh']."</option>";
+                                            echo "<option value='".$row['tentinh']."'data-data='".$row['idtinh']."' >".$row['tentinh']."</option>";
                                              }
                                             }
                                         ?>
@@ -238,7 +238,7 @@
                         </td>                    
                         <td align="left" style="width: 100px">Tổng điểm</td>
                         <td>
-                            <input name="tongdiem" type="text" class="tongdiem"  disabled="disabled"  style="width:98%;">
+                            <input name="tongdiem" type="text" class="tongdiem" id="tong"   style="width:98%;">
                         </td>                    
                     </tr>
                     <tr>
