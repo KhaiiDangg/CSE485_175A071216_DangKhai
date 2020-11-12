@@ -1,7 +1,7 @@
 <?php 
 session_start();
 require 'app/database/config.php';
-require 'controllers/insert_user.php';
+require 'insert_user.php';
 // IF USER LOGGED IN
 // if(isset($_SESSION['email'])){
 // header('Location: home.php');

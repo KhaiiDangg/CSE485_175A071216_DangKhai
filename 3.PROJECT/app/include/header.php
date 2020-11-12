@@ -35,7 +35,7 @@
   <!--Header Menu-->
   <div class="menu-header">
       <div class="dropdown">
-          <button class="dropbtn"><a href="cse.tlu.edu.vn">TRANG CHỦ</a></button>
+          <button class="dropbtn"><a href="trangchu.php">TRANG CHỦ</a></button>
         </div>
         <div><span>|</span></div>
         <div class="dropdown">
@@ -144,8 +144,8 @@
           <div class="dropdown-content">
               <div class="whitespace"></div>
               <div class="dropdown-contents">
-                  <a href="#">XÉT TUYỂN HỌC BẠ</a>
-                  <a href="#">XÉT TUYỂN DỰA TRÊN KẾT QUẢ THI THPT</a>
+                  <a href="dkyxethocba.php">XÉT TUYỂN HỌC BẠ</a>
+                  <a href="dkyxettuyen.php">XÉT TUYỂN DỰA TRÊN KẾT QUẢ THI THPT</a>
               </div>
 
           </div>

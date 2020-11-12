@@ -1,7 +1,7 @@
 <?php
 session_start();
 require 'app/database/config.php';
-require 'controllers/xulilogin.php';
+require 'xulilogin.php';
 // IF USER LOGGED IN
 // if(isset($_SESSION['user_email'])){
 // header('Location: home.php');
