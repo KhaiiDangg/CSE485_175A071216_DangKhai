@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ERROR);
+ session_start();
+
 if(isset($_POST['email']) && isset($_POST['password'])){
 
 // CHECK IF FIELDS ARE NOT EMPTY
@@ -22,7 +25,9 @@ if($check_password === TRUE){
 session_regenerate_id(true);
 
 $_SESSION['email'] = $email;  
-header('Location: dkyxethocba.php');
+$_SESSION['name'] = $row['username'];  
+$_SESSION['phanquyen'] = $row['phanquyen'];  
+header('Location: trangchu.php');
 exit;
 
 }

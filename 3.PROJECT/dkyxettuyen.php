@@ -29,14 +29,14 @@
         if ($db_connection->query($sql) === TRUE) {
             echo "New record created successfully";
           } else {
-            echo "Error: " . $sql . "<br>" . $db_connection->error;
+            //echo "Error: " . $sql . "<br>" . $db_connection->error;
           }
 
         $sql = "INSERT INTO xetdiemthi (cmnd, bacdaotao, nganh, tohopmon, khuvucuutien, doituonguutien, diemmon1, diemmon2, diemmon3, tongdiem, ghichu) VALUES ($cmnd ,'$bacdaotao','$nganh','$tohop','$kvut','$doituongut','$diemmon1','$diemmon2','$diemmon3','$tongdiem','$ghichu')";
         if ($db_connection->query($sql) === TRUE) {
-            echo "New record created successfully";
+           // echo "New record created successfully";
           } else {
-            echo "Error: " . $sql . "<br>" . $db_connection->error;
+            //echo "Error: " . $sql . "<br>" . $db_connection->error;
           }
 
     }

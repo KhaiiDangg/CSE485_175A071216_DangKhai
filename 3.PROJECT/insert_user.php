@@ -29,7 +29,7 @@ LEARN ABOUT PHP password_hash - http://php.net/manual/en/function.password-hash.
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
 // INSER USER INTO THE DATABASE
-$insert_user = mysqli_query($db_connection, "INSERT INTO `user` (username, email, password) VALUES ('$username', '$email', '$password')");
+$insert_user = mysqli_query($db_connection, "INSERT INTO `user` (username, email, password,phanquyen) VALUES ('$username', '$email', '$password',0)");
 
 if($insert_user === TRUE){
 $success_message = "Đăng ký tài khoản thành công";

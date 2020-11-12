@@ -1,14 +1,6 @@
-
-<?php 
-error_reporting(E_ERROR);
-session_start();
-if(isset($_SESSION['email'])&&$_SESSION['phanquyen']==1){
-    // echo "dsadas";
-}
-else{
-    header('Location:../../trangchu.php');
-
-} ?>
+<?php
+    include('../../app/database/config.php') ;
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -24,7 +16,7 @@ else{
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.php">Admin Page</a>
+            <a class="navbar-brand" href="user.php">My Profile</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -43,7 +35,7 @@ else{
                         <a class="dropdown-item" href="#">Settings</a>
                         <a class="dropdown-item" href="#">Activity Log</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="../../logout.php">Logout</a>
+                        <a class="dropdown-item" href="login.php">Logout</a>
                     </div>
                 </li>
             </ul>
@@ -59,21 +51,20 @@ else{
                                 Trang chủ
                             </a>
                             <div class="sb-sidenav-menu-heading">CHỨC NĂNG</div>
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Tra cứu thông tin
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            <a class="nav-link collapsed" href="hoso.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                                Hồ sơ sinh viên
+                                <!-- <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div> -->
                             </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                            <!-- <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="qlyhocba.php">Đký xét tuyển học bạ</a>
                                     <a class="nav-link" href="qlyketquathi.php">Đký xét tuyển bằng kết quả thi THPT quốc gia</a>
                                 </nav>
-                            </div>
-
-                            <a class="nav-link" href="qlyuser.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Quản lý User
+                            </div> -->
+                            <a class="nav-link" href="myprofile.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user-edit"></i></div>
+                                My Profile
                             </a>                                   
                             <div class="sb-sidenav-menu-heading">Hỗ trợ</div>
                             <a class="nav-link" href="lienhe.php">
@@ -87,44 +78,51 @@ else{
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Trang chủ</h1> <br>
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Hồ sơ sinh viên : Đăng ký xét tuyển bằng học bạ</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="qlyhocba.php">Hiện thị chi tiết</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
+                        <h1 class="mt-4">My Profile</h1> <br>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table mr-1"></i>
+                                My Profile
                             </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Hồ sơ sinh viên: Đăng ký xét tuyển bằng điểm thi THPT</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="qlyketquathi.php">Hiện thị chi tiết</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
+                            <div class="container" style="">
+                            <form method="POST" action="xuliedit.php">
+                            <input hidden type="text" class="name" name="id" >
+
+                            <label for="username"> Username</label> <br>
+                            <input type="text" class="name" name="name" >
+                            <br>
+                                
+                            <label for="email"> Email</label> <br>
+                            <input type="text" class="name" name="name" >
+                            <br>
+                            
+                            <label for="password"> Password</label> <br>
+                            <input type="password" class="password" name="password" >
+                            <span> <a href="resetpass.php" style="color : red ; font-size :small"> &nbsp *Đặt lại mật khẩu </a></span>
+                            <br>
+                            <br>
+                                <input type="submit" value="Save" class="save">
+                                <input  type="button" value="Cancel">
+                            </form>
                             </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Quản lý User</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="qlyuser.php">Hiện thị chi tiết</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
+                            <!-- <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>User ID</th>
+                                                <th>Username</th>
+                                                <th>Email</th>
+                                                <th>Ngày tạo</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>   
+                                      
+                                        </tbody>
+                                    </table>
                                 </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Hỗ trợ</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="lienhe.php">Hiện thị chi tiết</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </main>

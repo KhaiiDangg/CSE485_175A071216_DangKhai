@@ -31,29 +31,33 @@
         $diemxettuyen = $_POST['diemxettuyen'] ;
         $ghichu = $_POST['ghichu'] ;
 
-        $sql = "INSERT INTO hosocanhan (cmnd, hoten, gioitinh, ngaysinh, ngaycapcmnd, noicapcmnd, sdt, email, hokhau, tinh, huyen, diachinhanthu) VALUES ($cmnd,'$hoten','$gioitinh','$ngaysinh','$ngaycap','$noicap','$sdt','$email','$hokhau','$tinh','$huyen','$diachinhanthu') " ;
+        $sql = "INSERT INTO `hosocanhan`(`cmnd`, `hoten`, `gioitinh`, `ngaysinh`, `ngaycapcmnd`, `noicapcmnd`, `sdt`, `email`, `hokhau`, `tinh`, `huyen`, `diachinhanthu`)  VALUES ($cmnd,'$hoten','$gioitinh','$ngaysinh','$ngaycap','$noicap','$sdt','$email','$hokhau','$tinh','$huyen','$diachinhanthu') " ;
+        // $sql = "INSERT INTO `hosocanhan`(`cmnd`, `hoten`, `gioitinh`, `ngaysinh`, `ngaycapcmnd`, `noicapcmnd`, `sdt`, `email`, `hokhau`, `tinh`, `huyen`, `diachinhanthu`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9],[value-10],[value-11],[value-12]) " ;
         //echo $sql;
         $query = mysqli_query($db_connection, $sql);
         if ($db_connection->query($sql) === TRUE) {
             //echo "New record created successfully";
           } else {
-            echo "Error: " . $sql . "<br>" . $db_connection->error;
+            // echo "Error: " . $sql . "<br>" . $db_connection->error;
           }
 
         $sql = "INSERT INTO xethocba (cmnd, bacdaotao, loaihinh, nganh, khuvucuutien, doituonguutien, tinhlop10, tinhlop11, tinhlop12, truonglop10, truonglop11, truonglop12, diemtblop10, diemtblop11, diemtblop12, diemxettuyen, namtotnghiep, ghichu) VALUES ($cmnd,'$bacdaotao','$loaihinh','$nganh','$khuvucuutien','$doituonguutien','$tinhlop10','$tinhlop11','$tinhlop12','$truonglop10','$truonglop11','$truonglop12', '$diem10' , '$diem11' , '$diem12' , $diemxettuyen , '$namtotnghiep' ,'$ghichu')" ; 
          if ($db_connection->query($sql) === TRUE) {
             //echo "New record created successfully";
           } else {
-            echo "Error: " . $sql . "<br>" . $db_connection->error;
+            // echo "Error: " . $sql . "<br>" . $db_connection->error;
           }
         // echo "<script type='text/javascript'>alert('Đăng ký thành công !');</script>"; 
+     
     }
 
 ?>
+
 <!doctype html>
 <html lang="en">
   <head>
     <title>ĐĂNG KÝ XÉT HỌC BẠ</title>
+  
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

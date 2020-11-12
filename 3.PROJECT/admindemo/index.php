@@ -1,3 +1,14 @@
+
+<?php 
+// error_reporting(E_ERROR);
+session_start();
+if(isset($_SESSION['email'])){
+    echo "dsadas";
+}
+else{
+    header('Location: ../trangchu.php');
+
+} ?>
 <!DOCTYPE html>
 <html>
 
